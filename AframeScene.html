@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramen Bowl</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    
+    <a-assets>
+      <a-asset-item id="table" src="Textures/Table.gltf" onloaded="startScene"></a-asset-item>
+      <a-asset-item id="bowl" src="RamenBowl.gltf" onloaded="startScene"></a-asset-item>
+    </a-assets>
+
+    <a-entity>
+      <a-entity gltf-model="#table" position="0 -1.5 -5"></a-entity>
+      <a-entity gltf-model="#bowl" position="0 -1.5 -5" rotation="0 180 0"></a-entity>
+    </a-entity>
+
+
+    <script>
+      function startScene() {
+        console.log('The 3D model is loaded. Starting A-Frame scene.');
+        const scene = document.querySelector('a-scene');
+        scene.setAttribute('background', 'color: #ECECEC');
+      }
+    </script>
+  </a-scene>
+</body>
+</html>
